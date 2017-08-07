@@ -1,0 +1,108 @@
+/* 布局模块 */
+	.index_box{ background: #ffffff; }
+	a:hover{ color: #050505; }	
+	.index_body{ margin: 0 auto; width: 1150px; }
+	.index_body p{color: #535353; }
+	.index_body p a{ color: #3c3c3c; }
+	.Carousel_box0{ height: 427px; margin: 0 auto; width: 1300px; padding-top: 12px; padding-bottom: 15px; }	
+	.Carousel_box{ width: 1150px; height: 100%; margin: 0 auto; }	
+	.hotspot{ height: 353px;  }
+	.newMess{ margin-top: 18px; }
+	.discuss{  margin-top: 8px;}
+	.banner1{ height: 114px; margin-top: 30px; }
+	.course{ margin-bottom: 21px;}
+	.collaboration{ height: 210px; }
+
+	.hotspot .fl ul a:hover{  text-decoration: underline; color: #181818; }
+	.newMess .fl ul a:hover{  text-decoration: underline;  color: #181818; }
+	.discuss .fl ul a:hover{  text-decoration: underline;  color: #181818; }
+	.course .fl ul a:hover{  text-decoration: underline;  color: #181818; }
+	/* public style */
+	.t_main{ width: 806px; height: 100%; }
+	.Carousel{ width: 804px; height: 100%;   height: 375px;}
+	.s_title{ padding: 0 22px 0 10px;height: 46px;  border-bottom: 1px solid #d1dfd2}
+	.s_title h4{ line-height: 46px;  height: 46px;  font-size: 16px; font-weight: bold; color: #595959;}
+	.s_title .more{ line-height: 46px; height: 46px;  font-size: 14px;  color: #4e4e4e; }
+	.t_nav{ width: 114px; text-align: center; margin-top: 15px; position: relative; }
+	.t_nav li{ width: 86px; height: 42px; line-height: 42px; cursor: pointer; border: 1px solid #e0e0e0; border-bottom: none;}
+	.t_nav li:last-child{ border-bottom: 1px solid #e0e0e0; }
+	.t_nav li.active{ background: #0781f2; color: #f6f6f6; border: none;}
+	.module_body p{ width: 192px; line-height: 24px; font-weight: bold;  }
+		/*热点的公有样式*/
+		.side_list{ overflow: hidden;   width: 324px;   }
+		.side_list h4{ width: 100%; font-size: 16px; border-bottom: 1px solid #d1dfd2; font-weight: bold; line-height: 46px; height: 46px;  color: #595959; padding-left: 6px;  margin-left: 10px; }
+		.side_list ul{ margin-left: 10px;  }
+		.side_list li{ line-height: 20px; height: 20px;  max-height: 40px; overflow: hidden; margin-top: 10px;  padding-left: 16px; background: url(../assets/li_point.png) no-repeat 0 12px;}
+	/* end public style */
+
+
+	/* 轮播模块 */
+	.Carousel_box0{ background: url(../assets/i_shade.jpg); }
+	.Carousel_box{ height: 374px; }
+	.Carousel{ position: relative; }
+	.Carousel .CarouselPic{ width: 804px; height: 400px;  position: absolute; left: 0; top: 0; }
+	.float_box{ position: absolute; height: 100%; width: 200px; padding-left: 13px; background: rgba(0,0,0,0.5); right: 0; top: 0;  z-index: 5;}	
+	.float_box a{ display: inline-block;}
+	.float_box img{  width: 175px; height: 80px; margin: 9px;   }
+
+	.fistMess{ margin-left: 15px; width: 320px; height: 374px; }
+	.fistMess h4{ width: 88px; height: 28px; text-align: center; line-height: 26px; font-weight: bold; font-size: 14px; color: #616161;   border:1px solid #acacac;  }
+	.fistMess li{ height: 93px; width: 323px; background: #ffffff;    border-bottom: 3px solid #f0f0f0; border-right: 2px solid #f0f0f0;   }
+	.fistMess img{ width: 93px; height: 58px; }
+	.fistMess a.fl{ display: inline-block; margin: 15px 10px; margin-right: 14px;  }
+	.fistMess p{  font-weight: bold;  vertical-align: middle;  width: 200px; line-height: 20px; margin-top: 27px; }
+	.fistMess p a{color: #535353;}
+	.Carousel_triangle{ position: absolute; left: 0px; top: 50px; width: 0; height: 0; border-top: 9px solid transparent; border-left: 11px solid #dca444; border-bottom: 9px solid transparent; z-index: 5;}
+	/* 今日看点点模块 */
+	.todaySpot{ width: 804px; }
+	
+	.hotspot .side_list li{ margin-top: 10px;}
+	.today_n_item{ height: 310px;  }
+	/* 横向广告1 */
+	.side_list a{ color: #424242; } 
+	.side_list a:hover{ color: #225dc7;  }
+	/* 论坛热议模块 */
+	.discuss .module_body{ margin-top: 20px;}
+	.discuss .module_body p{ display: table;  margin-left: 15px; width: 190px; line-height: 25px;   overflow: hidden; text-overflow:ellipsis; text-align: left;}
+	.discuss .module_body p a{  height: 75px; display: table-cell;  vertical-align:middle;}
+	.d_item{ width: 690px;  height: 570px;   }
+	.d_item li{ float: left; height: 75px; margin-bottom: 20px; width: 340px; background: #ffffff; }
+	.d_item	img{ width: 124px; height: 74px; }
+	.discuss .s1ide_list h4{ background-position: 0 -32px; } 
+	.increase_ul{ height: 440px; }
+	/* 新品资讯模块 */
+	.newMess .side_list h4{ background-position: 2px -78px; } 
+	.n_item{ width: 690px; padding-top: 16px;  }
+	.new_n_item{ height: 415px; }
+	.n_item li{ float: left; height: 84px; width: 340px; background: #ffffff; margin-bottom: 15px;}
+	.n_item>li>a{ display: inline-block;   }
+	.n_item	img{ width: 124px; height: 84px; }
+	.n_item p{   display: table;  margin-left: 15px; line-height: 25px;    overflow:hidden; text-overflow:ellipsis;}
+	.n_item p a{display: table-cell; vertical-align:middle;  height: 84px;}
+
+	.hot_Click_Ul{ height: 244px; }
+	/* 横向广告2 */
+	.banner1 .banner1_1 img{ height: 114px; width: 816px; margin-left: 4px }
+	.banner1 .banner1_2 img{ height: 114px; width: 322px; }
+	/* 课程模块 */
+	.course .side_list h4{ background-position: 0 -122px; } 
+	.collaboration h4{ line-height: 60px; font-size: 16px; font-weight: bold; height: 60px; margin-left: 10px; color: #595959;  }
+	.collaboration ul{ margin-left: 50px;}
+	.collaboration li{ width: 102px; height: 367x; border: 1px solid #dbdbdb; float: left; margin: 8px 10px; }
+	.collaboration li img{ width: 100px; height: 35px; }
+	.collaboration a{ display: inline-block; }
+	.m_item{ width: 690px;  }
+	.m_item li{ float: left; height: 98px; width: 320px; background: #ffffff; border-radius: 3px; box-shadow:  2px 2px rgba(223,223,223,0.8); margin-left: 15px; margin-top:25px; }
+	.m_item li a{display: inline-block; margin: 9px;  position: relative;  width: 78px; height: 74px; }
+	.m_item p{margin-left: 15px; margin-top: 15px; }
+	.m_item	img{ width: 78px; height: 74px;  position: absolute;}
+	
+	.small_banner_span{ position: absolute;  margin-top: 15px; width: 314px; margin-left: 5px;}
+	.small_banner_box{ position: relative;  }
+	.small_banner_span img{width: 154px; height: 122px;  } 
+	.small_banner_box p{ position: absolute;  width: 118px; height: 31px;	line-height: 14px; font-size: 12px; background: rgba(20,19,13,0.5); text-align: center; padding: 0 18px; color: #ffffff; left: 0; bottom: 0px; }
+	.small_banner_span p {padding-top: 4px;  }
+
+	.t_nav .triangle{ position: absolute; right: 10px; top: 20px; width: 0; height: 0; border-top: 9px solid transparent; border-right: 11px solid #808080; border-bottom: 9px solid transparent; z-index: 5; }
+
+	.scarousel{ margin-top: 10px; margin-left: 5px; }

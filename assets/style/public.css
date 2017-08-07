@@ -1,0 +1,27 @@
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,th,td,select,button{margin:0;padding:0; font-family: "Microsoft YaHei";}
+em{font-style:normal}
+li{list-style:none}
+a{ text-decoration:none; color: #000; }
+a:hover{ text-decoration: none;}
+img{border:none; vertical-align:top;}	 	/* 去边框对齐 */
+table{border-collapse:collapse;}	 		/* 表格合并*/
+textarea{ resize:none;overflow:auto;}  	    /* chrome多行文本变大变小*/
+input,textarea{outline:none;}            /* 去除焦点高亮度 */
+body{ font-size:14px; font-family:"Microsoft YaHei";}
+button{ border: none;}
+/* end reset */ 
+.clear{zoom:1;}
+.clear:after{content: "";display: block;clear: both; }  /* 请浮动 */   
+.fl{float: left;}
+.fr{float: right;}
+
+body{ background: #f7f7f7; }
+.logBox{ width: 82px; height: 82px; margin: 0 auto; margin-top: 40px;}
+.logBox img{ width: 82px; height: 82px; }
+.errorStatus{ font-size: 18px; font-weight: bolder; color: #222; margin: 66px auto; width: 960px; text-align: center;   }
+.browserBox{width: 431px; margin: 0 auto;}
+.browserBox .fl{ border-right: 1px solid #d1d1d1; }
+.browserBox>div{width: 215px; height: 125px; }
+.img_tbox img{ width: 100px; height: 100px;  display: block; }
+.img_tbox a{ display: block; width: 100px; height: 100px;  margin: 0 auto;}
+.browserBox p{ width: 215px; text-align: center;}

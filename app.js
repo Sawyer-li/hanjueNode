@@ -4,6 +4,7 @@ var app = express();
 var birds = require('./birds');
 app.set('views','./views');
 app.set('view engine', 'jade');
+app.use(express.static('assets'));
 app.use('/',birds);
 app.use(function(req,res,next){
     var err = new Error('Not Found');

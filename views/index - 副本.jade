@@ -1,0 +1,263 @@
+doctype html
+html(lang="en")
+  head
+    title 思享国
+    meta( name="title",content="思享国开源硬件论坛")
+    meta( name="author",content="Sawyer")
+    meta( name="Keywords",content="all4lib,思享国,瀚决,开源硬件,AD,protel,DXP,元器件库,y原理图,PCB,原理图库,PCB库,技术社区,技术论坛,元器件仿真,电路仿真,技术活动,电子工程师,电子培训,嵌入式编程,传感器,电源,FPGA")
+    meta( name="description",content="思想国中国领先的硬件开发者技术社区。 我们希望为硬件编程爱好者提供一个纯粹、高质的技术交流的平台、交流与成长，创造属于开发者的时代")
+    meta( name="renderer",content="webkit|ie-comp|ie-stand")
+    meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+    link(href="style/index.css",rel="stylesheet",type="text/css")
+    link(href="style/public.css",rel="stylesheet",type="text/css")
+  body
+    .index_box
+      .Carousel_box0
+        .Carousel_box
+          .Carousel.fl
+            a(href="http://www.digiic.com")
+              img(src="banner/3.jpg",class="CarouselPic")
+            img(src="banner/1.jpg",class="CarouselPic")
+            img(src="banner/2.jpg",class="CarouselPic")
+            img(src="banner/4.jpg",class="CarouselPic")
+            .float_box
+              a(href="http://www.digiic.com",target=_blank)
+                img( src="banner/3.jpg",alt="")
+              a(href="#")
+                img(src="banner/1.jpg",alt="")
+              a(href="#")
+                img(src="banner/2.jpg",alt="")
+              a(href="#")
+                img(src="banner/4.jpg",alt="")
+              .Carousel_triangle
+          .fistMess.fl
+            h4 最新资讯：
+            ul
+            - var items = initData.zxzx
+            each item in items
+              li.clear
+                a.fl(href="#")
+                  img(src=item.picturepath, alt="")
+                p.fl
+                  a(href="#") #{item.subject}
+      .index_body
+        section.hotspot.fl
+          .todaySpot.fl
+            .s_title.clear
+              h4.fl 今日看点：
+              .fr.more 更多
+            .module_body.clear
+              ul.t_nav.fl
+                .triangle
+                li.active 国内看点
+                li 国际看点
+              ul.n_item.today_n_item.fl
+                - var items = initData.gnkd
+                each item in items
+                  li
+                    a.fl(href="#")
+                      img(src=item.picturepath, alt="")
+                    p.fl
+                      a(href="#") #{item.subject}         
+              //- ul.n_item.today_n_item.fl
+              //-   - var items = initData.gjkd
+              //-   each item in items
+              //-     li
+              //-       a.fl(href="#")
+              //-         img(src=item.picturepath, alt="")
+              //-       p.fl
+              //-         a(href="#") #{item.subject}
+          .side_list.fr
+            h4 电子热点
+            ul.side_list
+              - var items = initData.dzrd
+              each item in items
+                li
+                  a(href="") #{item.subject}
+        section.hanjue_media
+          .discuss.clear
+            .d_main.t_main.fl
+              .s_title.clear
+                h4.fl 论坛热议
+                .fr.more
+              .module_body.clear
+                ul.t_nav.fl
+                  .triangle
+                  li 近期热评：
+                  li.active 往期回顾
+                ul.d_item.fr
+                  - var items = initData.jqrp
+                  each item in items
+                      li
+                        a.fl(href=""): img(src=item.picturepath, alt="")
+                        p.fl: a(href="") #{item.subject}          
+                //- ul.d_item.fr
+                //-   - var items = initData.wqhg
+                //-   each item in items
+                //-       li
+                //-         a(href=""): img(src=item.picturepath, alt="")
+                //-         p.fl: a(href="") #{item.subject}
+            .fr.side_list.increase_side
+              h4  飙升贴
+              ul.increase_ul
+                each item in riseData
+                  li: a #{item.subject}
+              .small_banner_span.clear
+                .small_banner_box.fl
+                  img(src="big_news/bigNews1.png", alt="")
+                  p.pic_alt 可穿戴半导体设计技术轮胎
+                .small_banner_box.fr
+                  img(src="small_banner.png ", alt="")
+                  p.pic_alt 可穿戴半导体设计
+          section.banner1.clear
+            .banner1_1.fl
+              img(src="crossBanner2.jpg", alt="")
+            .banner1_2.fr
+              img(src="crossBanner3.jpg", alt="")
+          .newMess.clear
+            .m_main.t_main.fl
+              .s_title.clear
+                h4.fl 新品资讯：
+                .fr.more 更多>>
+              .module_body.clear
+                ul.t_nav.fl
+                  .triangle
+                  li 新品速递
+                  li.active 新品剖析
+                  li 新品分析
+                ul.n_item.new_n_item.fr
+                  each item in initData.xpsd
+                    li
+                      a.fl(href=""): img(src=item.picturepath, alt="")
+                      p.fl: a(href="") #{item.subject}
+                //- ul.n_item.new_n_item.fr
+                //-   each item in initData.xppx
+                //-     li
+                //-       a.fl(href=""): img(src=item.picturepath, alt="")
+                //-       p.fl: a(href="") #{item.subject}      
+                //- ul.n_item.new_n_item.fr
+                //-   each item in initData.xpfx
+                //-     li
+                //-       a.fl(href=""): img(src=item.picturepath, alt="")
+                //-       p.fl: a(href="") #{item.subject}
+            .m_slide.fr.side_list      
+              h4 热门点击
+              .hot_Click_Ul
+                each item in hotData
+                  li: a(href="#") #{item.subject}
+        section.course.clear
+          .c_main.t_main.fl
+            .s_title.clear
+              h4.fl 最新课程：
+              .fr.more 更多>>
+            .module_body.clear
+              ul.t_nav.fl
+                .triangle
+                li 瀚决大学  
+                li.active stanford
+                li MIT课程 
+              ul.m_item.fr
+                li
+                  a.fl(href="#")
+                    img(src="big_news/bigNews1.png", alt="")
+                    img(src="small_video/playIcon.png", alt="")
+                  p.fl 通过消除大容量电容来构建小型、更...
+                li
+                  a.fl(href="#")
+                    img(src="big_news/bigNews1.png", alt="")
+                    img(src="small_video/playIcon.png", alt="")
+                  p.fl 并联电源： 许多可行选项，但要知道权衡
+                li
+                  a.fl(href="#")
+                    img(src="big_news/bigNews1.png", alt="")
+                    img(src="small_video/playIcon.png", alt="")
+                  p.fl 便携式气象站演示
+                li
+                  a.fl(href="#")
+                    img(src="big_news/bigNews1.png", alt="")
+                    img(src="small_video/playIcon.png", alt="")
+                  p.fl 设计高效的AC-DC电源系统
+              //- ul.m_item.fr
+              //-   li
+              //-     a.fl(href="#")
+              //-       img(src="big_news/bigNews3.png", alt="")
+              //-       img(src="small_video/playIcon.png", alt="")
+              //-     p.fl 通过消除大容量电容来构建小型、更...
+              //-   li
+              //-     a.fl(href="#")
+              //-       img(src="big_news/bigNews3.png", alt="")
+              //-       img(src="small_video/playIcon.png", alt="")
+              //-     p.fl 并联电源： 许多可行选项，但要知道权衡
+              //-   li
+              //-     a.fl(href="#")
+              //-       img(src="big_news/bigNews3.png", alt="")
+              //-       img(src="small_video/playIcon.png", alt="")
+              //-     p.fl 便携式气象站演示
+              //-   li
+              //-     a.fl(href="#")
+              //-       img(src="big_news/bigNews3.png", alt="")
+              //-       img(src="small_video/playIcon.png", alt="")
+              //-     p.fl 设计高效的AC-DC电源系统
+              //- ul.m_item.fr
+              //-   li
+              //-     a.fl(href="#")
+              //-       img(src="big_news/bigNews2.png", alt="")
+              //-       img(src="small_video/playIcon.png", alt="")
+              //-     p.fl 通过消除大容量电容来构建小型、更...
+              //-   li
+              //-     a.fl(href="#")
+              //-       img(src="big_news/bigNews2.png", alt="")
+              //-       img(src="small_video/playIcon.png", alt="")
+              //-     p.fl 并联电源： 许多可行选项，但要知道权衡
+              //-   li
+              //-     a.fl(href="#")
+              //-       img(src="big_news/bigNews2.png", alt="")
+              //-       img(src="small_video/playIcon.png", alt="")
+              //-     p.fl 便携式气象站演示
+              //-   li
+              //-     a.fl(href="#")
+              //-       img(src="big_news/bigNews2.png", alt="")
+              //-       img(src="small_video/playIcon.png", alt="")
+              //-     p.fl 设计高效的AC-DC电源系统
+          .c_slide.fr.side_list
+            h4 热门下载
+            ul
+              li: a(href="") 程序员“趣事”一箩筐︱其实大学不分贵贱，即使在民办也要学好知识
+              li: a(href="") 拨开东芝存储器业务竞购的迷雾，看清整个存储市场的变局
+              li: a(href="") 揭开华大半导体身世之谜，成立三年却是能够“hold”住这么多子公司
+              li: a(href="") 程序员“趣事”一箩筐︱其实大学不分贵贱，即使在民办也要学好知识
+        section.collaboration
+          h4 合作机构：
+          ul.clear
+            li
+              a: img(src="collabration/collabration_icon1.png", alt="")
+            li
+              a: img(src="collabration/collabration_icon2.png", alt="")
+            li
+              a: img(src="collabration/collabration_icon3.png", alt="")
+            li
+              a: img(src="collabration/collabration_icon4.png", alt="")
+            li
+              a: img(src="collabration/infineonic.jpg", alt="")
+            li
+              a: img(src="/collabration/eetop.gif", alt="")
+            li
+              a: img(src="collabration/zd-logo.png", alt="")
+            li
+              a: img(src="collabration/SupplyFrame.gif", alt="")
+            li
+              a: img(src="collabration/rf.jpg", alt="")
+            li
+              a: img(src="collabration/eeboard.jpg", alt="")
+            li
+              a: img(src="collabration/d5.jpg", alt="")
+            li
+              a: img(src="collabration/cndzz.gif", alt="")
+            li
+              a: img(src="collabration/cecb2b.jpg", alt="")
+
+
+
+
+
+          
