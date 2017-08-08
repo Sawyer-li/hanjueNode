@@ -12,8 +12,8 @@ router.get('/',function(req,res){
     var nodeUrl = 'http://cnodejs.org/?tab=all&page=2';
     var ep = new eventproxy();
     //调用主页获取各种列表
-    //var hanjueUrlBase = 'http://www.all4lib.com/hanjue/'
-    var hanjueUrlBase = 'http://192.168.31.134:8080/hanjue/'
+    var hanjueUrlBase = 'http://www.all4lib.com/hanjue/'
+    //var hanjueUrlBase = 'http://192.168.31.134:8080/hanjue/'
     var time = new Date();
 
     var t1 = new Date().getTime();

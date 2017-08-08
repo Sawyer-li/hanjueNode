@@ -9,9 +9,13 @@ html(lang="en")
     meta( name="Keywords",content="all4lib,思享国,瀚决,开源硬件,AD,protel,DXP,元器件库,y原理图,PCB,原理图库,PCB库,技术社区,技术论坛,元器件仿真,电路仿真,技术活动,电子工程师,电子培训,嵌入式编程,传感器,电源,FPGA")
     meta( name="description",content="思想国中国领先的硬件开发者技术社区。 我们希望为硬件编程爱好者提供一个纯粹、高质的技术交流的平台、交流与成长，创造属于开发者的时代")
     meta( name="renderer",content="webkit|ie-comp|ie-stand")
-  block scripts
+  block detailCss
+  block publicScripts
     script(src='js/jquery.js')
-  block csses
+  block publicCss
+    link(href="style/public.css",rel="stylesheet",type="text/css")
+  block privateCss  
   body
-    block content
-    block foot
+    block body
+
+
