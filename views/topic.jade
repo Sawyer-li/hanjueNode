@@ -1,0 +1,102 @@
+extends layoutDetail
+block privateCss
+  link(rel="stylesheet", href="/style/topic.css")
+  style.
+    .topic_box{ background: #f7f7f7;}
+    .topic_body{ margin: 0 auto;  width: 1150px;  margin-bottom: 60px;  }
+    .topic_body section{ width: 770px; }
+block content
+  .topic_body.clear
+    .retTop
+      span.retTop_word 返回顶部
+      .triangle-top-arrow.active
+        .son
+    .header.clear
+      .mid_head.fl
+        button.eye 20
+        button.heart 10
+        .top
+          h2 这里应该放文章标题
+        .middle.clear
+          .fl.olabel
+            em 标签：
+            span 那里有标签这么回事
+          .fr.updateTime 更新于2017
+        .bottom.clear
+          .fl.clear
+            button.content.fl +sd
+            a.funbtn.comment(href="/") 评论
+            button.funbtn.agree 赞成
+            a.funbtn.disage(href="") 反对
+            button.funbtn.proPush 宝推
+          .fr.clear
+            a(href="/")
+              li 标签
+              li 标签1
+      .personage_mess.clear.fl
+        p.per_name 作者：
+          span sawyer
+        .getAgree 收到的赞： 
+          span 1000
+        .follow
+          span 999
+        button 90
+        headPort 
+          a(href="/"): img(src="", alt="")
+    section.topic_mid.fl        
+      .mid_doc
+        .main.wangEditor-container
+          .wangEditor-txt.wangDisplay#contenthtml
+        .displayAll 显示全部
+        .pushPer 
+          h3 宝推人
+          p
+            span 张三
+            span 李四
+            span 王二麻子
+      .mid_edit
+        a.editComBtn(href="/",target= _blank) 写评论
+        .editComBtn 已禁言
+      .mid_comment
+        .comment_head.comment_headHasComment
+          h3.fl 评论区
+          a.fr 全部
+        ul#treeDemo.ztree
+        .more 查看更多
+      .mid_footer.clear
+        .fl.rankL
+          h3 点赞榜单
+          ul
+            a(href="/"): li 这是一个帖子
+              .diamonds
+        .fr.rankL.newReply
+          h3 最新回复
+            ul
+              a(href="/") li 这是一个帖子
+                span.replyAuthor 作者
+                span.replyCount
+                .diamonds
+    aside.fl
+      .reolyLink
+        a.replyedPeople.fl(href="/") 回复说
+        em.replyPeople.fl sawyer
+      .reolyLink
+        h4 楼主建楼
+      .hot_news.clear
+        .hot_title.clear
+          h3.fl 历史贴目：
+          a.fr(href="#") 更多+
+        ul.hot_body
+          a(href="/") 
+            li 又是帖子么
+              .diamonds.hot_diamonds
+      .banner_box          
+        .banner.fl
+          img(src="/news/sBanner1.png", alt="")
+        .banner.fr
+          img(src="/news/sBanner1.png", alt="")      
+
+
+
+
+
