@@ -1,11 +1,17 @@
 extends layoutDetail
 block privateCss
   link(rel="stylesheet", href="/style/topic.css")
+  link(rel="stylesheet", href="/style/topic/wangEditor.css")
   style.
     .topic_box{ background: #f7f7f7;}
     .topic_body{ margin: 0 auto;  width: 1150px;  margin-bottom: 60px;  }
     .topic_body section{ width: 770px; }
+block privateScripts
+  script(src="/js/topic.js")
 block content
+  script.
+    var a =  !{JSON.stringify(initData)};
+    console.log(a);
   .topic_body.clear
     .retTop
       span.retTop_word 返回顶部
@@ -13,40 +19,41 @@ block content
         .son
     .header.clear
       .mid_head.fl
-        button.eye 20
-        button.heart 10
+        button.heart #{initData.likecount}
+        button.eye #{initData.click}
         .top
-          h2 这里应该放文章标题
+          h2 #{initData.subject}
         .middle.clear
           .fl.olabel
             em 标签：
-            span 那里有标签这么回事
-          .fr.updateTime 更新于2017
+            span #{initData.labelname}
+          .fr.updateTime #{initData.dateline}
         .bottom.clear
           .fl.clear
-            button.content.fl +sd
+            button.content.fl +关注内容
             a.funbtn.comment(href="/") 评论
             button.funbtn.agree 赞成
             a.funbtn.disage(href="") 反对
             button.funbtn.proPush 宝推
-          .fr.clear
-            a(href="/")
-              li 标签
-              li 标签1
+          ul.fr.clear
+            each item in accessory
+              a(href="/" download)
+                li #{item.typename}
       .personage_mess.clear.fl
         p.per_name 作者：
-          span sawyer
+          span #{initData.author}
         .getAgree 收到的赞： 
-          span 1000
+          span #{initData.memberlikecount}
         .follow
-          span 999
-        button 90
-        headPort 
-          a(href="/"): img(src="", alt="")
+          span #{initData.befocused}
+        button 点击关注
+        .headPort 
+          a(href="/"): img(src=initData.image, alt="")
     section.topic_mid.fl        
       .mid_doc
         .main.wangEditor-container
           .wangEditor-txt.wangDisplay#contenthtml
+            #{initData.content}
         .displayAll 显示全部
         .pushPer 
           h3 宝推人

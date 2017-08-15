@@ -3,9 +3,10 @@ var router = express.Router();
 var ajax = require('superagent');
 var eventproxy = require('eventproxy');
 var SelectList = {headInterests:[],bottomInterests: []};
-//var hanjueUrlTest = 'http://www.all4lib.com/hanjue/'
+var hanjueUrlTest = 'http://www.all4lib.com/hanjue/'
 //var hanjueUrlTest = 'http://47.92.6.182:8088/hanjue/'
-var hanjueUrlTest = 'http://192.168.31.134:8080/hanjue/'
+//var hanjueUrlTest = 'http://192.168.31.134:8080/hanjue/'
+//可选择的类的列表
 //展示型数据只在启动时候加载一次，暂时不知道好不好
 ajax.get(hanjueUrlTest+'member/getInterests')
     .end(function(err,res){
@@ -45,14 +46,10 @@ router.get('/',function(req,res){
                     if(data[i][j].picturepath != null){
                         data[i][j].picturepath = data[i][j].picturepath; 
                     }
-                    data[i][j].routerObject = {
-                        path: "/topic/"+data[i][j].pid,
-                        query: { ifpost: data[i][j].ifpost }
-                    }
+                    data[i][j].routerObject = "/topic/"+data[i][j].pid+"?ifpost="+data[i][j].ifpost;
                 }
             }
-            console.log('getPostByLabel is sucess');
-            ep.emit('getPostByLabel', data);
+             ep.emit('getPostByLabel', data);
         });
     //获取飙升帖子
     ajax.get(hanjueUrlTest+'postSearch/riseUpPost')
@@ -60,10 +57,7 @@ router.get('/',function(req,res){
             var resData = JSON.parse(res.text);
             var data = resData.data;
             for(var i in data){
-                data[i].routerObject ={
-                    path: "/topic/"+data[i].pid,
-                    query: { ifpost: data[i].ifpost }
-                };
+                data[i].routerObject = "/topic/"+data[i].pid+"?ifpost="+data[i].ifpost;
             }
             console.log('riseUpPost is sucess');
             ep.emit('riseUpPost', data);
@@ -74,10 +68,7 @@ router.get('/',function(req,res){
             var resData = JSON.parse(res.text);
             var data = resData.data;
             for(var i in data){
-                data[i].routerObject ={
-                    path: "/topic/"+data[i].pid,
-                    query: { ifpost: data[i].ifpost }
-                };
+                data[i].routerObject ="/topic/"+data[i].pid+"?ifpost="+data[i].ifpost;
             }
             console.log('hotClicksPost is sucess');
             ep.emit('hotClicksPost', data);
@@ -89,7 +80,6 @@ router.get('/',function(req,res){
         var dataLline = t3-t1;
         console.log("所有接口跑完时间:"+dataLline);
         console.log('开始渲染');
-        console.log(SelectList);
         $res.render('index',{initData: data1, riseData:data2, hotData:data3,listData: SelectList});
 
     });
@@ -110,19 +100,32 @@ router.post('/operate',function(req,res){
     res.send('test');
 })
 router.get('/topic/:topicId',function(req,res){
-    //console.log(req.params);
-    //console.log(req.query);
+    console.log(req.params);
+    console.log(req.query);
     $res = res;
-    ajax.post('/operate')
-        .set('Content-Type', 'application/json')
-        /*.query({ query: 'Manny' })
-        .query({ range: '1..5' })
-        .query({ order: 'desc' })*/
-        .send({ownName: 'sawyer'})
+    ajax.get(hanjueUrlTest+'postSearch/getPostDetail')
+        .query({ PID: req.params.topicId,IFPOST: req.query.ifpost})
+        //.send({ownName: 'sawyer'})
         .end(function(err,res){
-            //console.log('res内容');
-            //console.log(res.text);
-            $res.render('topic',{listData: SelectList});
+            console.log('success');
+            var resData = res;
+            var resData = JSON.parse(res.text);
+            var initData = resData.data;
+            var accessory = [{typename:"原理图"},{typename:"PCB"},{typename:"BOM"},{typename:"库"},{typename:"其它"}];
+            
+            for(var i in initData.accessoryList){
+                for(var j in accessory){
+                    if(accessory[j].typename == res.data.accessoryList[i].typename ){
+                        accessory[j].path = res.data.accessoryList[i].path;
+                        accessory[j].is = true;
+                    }
+                }
+            }
+            initData.image =hanjueUrlTest+initData.image;
+
+            console.log(accessory);
+
+            $res.render('topic',{listData: SelectList,initData: initData,initData,accessory: accessory});
         })
 })
 module.exports = router;

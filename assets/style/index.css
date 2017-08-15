@@ -1,7 +1,7 @@
 /* 布局模块 */
 	.index_box{ background: #ffffff; }
 	a:hover{ color: #050505; }	
-	.index_body{ margin: 0 auto; width: 1150px; }
+	.index_box section{ margin: 0 auto; width: 1150px; }
 	.index_body p{color: #535353; }
 	.index_body p a{ color: #3c3c3c; }
 	.Carousel_box0{ height: 400px; margin: 0 auto; width: 1300px; padding-top: 12px; padding-bottom: 15px; }	
@@ -32,12 +32,12 @@
 		.side_list{ overflow: hidden;   width: 324px;   }
 		.side_list h4{ width: 100%; font-size: 16px; border-bottom: 1px solid #d1dfd2; font-weight: bold; line-height: 46px; height: 46px;  color: #595959; padding-left: 6px;  margin-left: 10px; }
 		.side_list ul{ margin-left: 10px;  }
-		.side_list li{ line-height: 20px; height: 20px;  max-height: 40px; overflow: hidden; margin-top: 10px;  padding-left: 16px; background: url(../assets/li_point.png) no-repeat 0 12px;}
+		.side_list li{ line-height: 20px; height: 20px;  max-height: 40px; overflow: hidden; margin-top: 10px;  padding-left: 16px; background: url(/li_point.png) no-repeat 0 12px;}
 	/* end public style */
 
 
 	/* 轮播模块 */
-	.Carousel_box0{ background: url(../assets/i_shade.jpg); }
+	.Carousel_box0{ background: url(/i_shade.jpg); }
 	.Carousel_box{ height: 374px; }
 	.Carousel{ position: relative; }
 	.Carousel .CarouselPic{ width: 804px; height: 400px;  position: absolute; left: 0; top: 0; }
@@ -54,10 +54,13 @@
 	.fistMess p a{color: #535353;}
 	.Carousel_triangle{ position: absolute; left: 0px; top: 50px; width: 0; height: 0; border-top: 9px solid transparent; border-left: 11px solid #dca444; border-bottom: 9px solid transparent; z-index: 5;}
 	/* 今日看点点模块 */
+
+
 	.todaySpot{ width: 804px; }
 	
 	.hotspot .side_list li{ margin-top: 10px;}
-	.today_n_item{ height: 310px;  }
+	.today_n_item{ height: 310px; display: none;  }
+
 	/* 横向广告1 */
 	.side_list a{ color: #424242; } 
 	.side_list a:hover{ color: #225dc7;  }
@@ -65,15 +68,16 @@
 	.discuss .module_body{ margin-top: 20px;}
 	.discuss .module_body p{ display: table;  margin-left: 15px; width: 190px; line-height: 25px;   overflow: hidden; text-overflow:ellipsis; text-align: left;}
 	.discuss .module_body p a{  height: 75px; display: table-cell;  vertical-align:middle;}
-	.d_item{ width: 690px;  height: 570px;   }
+	.d_item{ width: 690px;  height: 570px; display: none;  }
 	.d_item li{ float: left; height: 75px; margin-bottom: 20px; width: 340px; background: #ffffff; }
 	.d_item	img{ width: 124px; height: 74px; }
+	
 	.discuss .s1ide_list h4{ background-position: 0 -32px; } 
 	.increase_ul{ height: 440px; }
 	/* 新品资讯模块 */
 	.newMess .side_list h4{ background-position: 2px -78px; } 
 	.n_item{ width: 690px; padding-top: 16px;  }
-	.new_n_item{ height: 415px; }
+	.new_n_item{ height: 415px; display: none; }
 	.n_item li{ float: left; height: 84px; width: 340px; background: #ffffff; margin-bottom: 15px;}
 	.n_item>li>a{ display: inline-block;   }
 	.n_item	img{ width: 124px; height: 84px; }
@@ -91,7 +95,7 @@
 	.collaboration li{ width: 102px; height: 367x; border: 1px solid #dbdbdb; float: left; margin: 8px 10px; }
 	.collaboration li img{ width: 100px; height: 35px; }
 	.collaboration a{ display: inline-block; }
-	.m_item{ width: 690px;  }
+	.m_item{ width: 690px; display: none; }
 	.m_item li{ float: left; height: 98px; width: 320px; background: #ffffff; border-radius: 3px; box-shadow:  2px 2px rgba(223,223,223,0.8); margin-left: 15px; margin-top:25px; }
 	.m_item li a{display: inline-block; margin: 9px;  position: relative;  width: 78px; height: 74px; }
 	.m_item p{margin-left: 15px; margin-top: 15px; }
@@ -106,3 +110,5 @@
 	.t_nav .triangle{ position: absolute; right: 10px; top: 20px; width: 0; height: 0; border-top: 9px solid transparent; border-right: 11px solid #808080; border-bottom: 9px solid transparent; z-index: 5; }
 
 	.scarousel{ margin-top: 10px; margin-left: 5px; }
+	/* 用于各种模块导航的的切换 */
+	ul.selected{ display: block; }
