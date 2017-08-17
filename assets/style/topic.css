@@ -45,7 +45,7 @@ aside .personage_mess{ height: 102px; background: #ffffff; }
 .personage_mess{ position: relative; box-shadow: 0 0 8px #e4e4e4; width: 370px; height: 128px; }
 .personage_mess .per_name{ position: absolute; font-weight: bold; top: 26px;  font-size: 16px; color: #3e3e3e;  left: 18px; width: 200px; }
 .personage_mess .getAgree{  position: absolute; top: 57px; left: 18px; width: 21px; color: #717171; min-width: 140px;  } 
-.personage_mess .getAgree span{ padding-right: 30px; color: #383838; background: url(/topic/SmallIcon.png) no-repeat 20px -382px; }
+.personage_mess .getAgree span{ padding-right: 30px; color: #383838; background: url(/topic/SmallIcon.png) no-repeat 25px -380px; }
 .personage_mess .follow{ position: absolute; top: 80px;  height: 33px; left: 22px; padding-left: 34px; background: url(/topic/smallImg.png) no-repeat 0 3px;}
 .personage_mess .follow span{ display: inline-block; line-height:33px ;}
 .personage_mess button{ position: absolute; top: 85px; left: 150px; width: 72px; height: 21px; border-radius: 2px; border: 1px solid #aaaaaa;  background: #FFFFFF; line-height: 19px; font-size: 14px;}
